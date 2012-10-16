@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   include SessionsHelper
+  include UsersHelper
   def new
   	@user = User.new
   end
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
       	flash[:success] = "Welcome to the Sample App!"
       	#redirect_to @user
     else
-      #render 'new'
+      render 'new'
     end
   end
 end
