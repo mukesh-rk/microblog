@@ -1,13 +1,14 @@
 class SessionsController < ApplicationController
+  include SessionsHelper
   def new
+
   end
 
   def create
-  	user = User.find_by_email(params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+  	user = User.find_by_email(params[:sessions][:email])
+    if user && user.authenticate(params[:sessions][:password])
       sign_in user
-      redirect_to user
-    else
+      else
       flash[:error] = 'Invalid email/password combination' 
       render 'new'
     end
@@ -21,5 +22,6 @@ class SessionsController < ApplicationController
     unless signed_in?
       store_location
       redirect_to signin_url, notice: "Please sign in."
+    end
   end
 end
