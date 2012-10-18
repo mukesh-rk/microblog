@@ -1,5 +1,10 @@
-<% provide(:title, @user.name) %>
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
+<h1>Login success</h1>
+<%= gravatar_for @user %>
+<p><%= link_to "Sign out", signout_path, :method=>:delete  %></p>
+<p>
+
+
+<h1>Login success</h1>
+<%= gravatar_for @user %>
+<p><%= link_to "Sign out", signout_path, :method=>:delete  %></p>
+

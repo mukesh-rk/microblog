@@ -10,7 +10,7 @@ Microblog::Application.routes.draw do
   get "sessions/destroy"
 
   post "users/new"
-
+  post "users/show"
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

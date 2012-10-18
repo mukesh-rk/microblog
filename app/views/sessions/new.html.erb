@@ -1,19 +1,27 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">  
+      </a>
+      <ul class="nav pull-right" >
+        <li><%= link_to "home"  %></li>
+        <li><%= link_to "signout", 'sessions/destroy', :method => :delete %>  </li>
+      </ul>
+    </div>
+  </div>
+</div>
 <% provide(:title, "Sign in") %>
 <h1>Sign in</h1>
 
 <div class="row">
   <div class="span6 offset3">
     <%= form_for :sessions, :url => {:action=> "create", :controller=>"sessions" } do |f| %>
-
       <%= f.label :email %>
       <%= f.text_field :email %>
-
       <%= f.label :password %>
       <%= f.password_field :password %>
-
       <%= f.submit "Sign in" %>
     <% end %>
-
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
 </div>
